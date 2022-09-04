@@ -12,14 +12,14 @@ class GenerateFirebaseDynamicLink():
         self.api_url 	= self.FIREBASE_API_URL.format(self.api_key)
 
 
-     def generate_dynamic_link(self, link, short=True, linkinfo_params={}, suffix_params={}):
+     def generate_dynamic_link(self, link, linkinfo_params={}, suffix_params={}):
         payload = {
             "dynamicLinkInfo": {
                 "domainUriPrefix": self.domain,
                 "link": link
             },
             "suffix": {
-                "option": "SHORT" if short else "UNGUESSABLE"
+                "option": "SHORT"
             }
         }
 
